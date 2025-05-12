@@ -27,33 +27,18 @@ const propTypes = {
   active: PropTypes.bool,
 };
 
-const defaultProps = {
-  initialName: null,
-  userName: null,
-  src: null,
-  size: constants.SIZE,
-  backgroundColors: constants.BACKGROUND_COLORS,
-  loaderColor: constants.LOADER_COLOR,
-  textColor: constants.TEXT_COLOR,
-  activeCircleColor: constants.ACTIVE_CIRCLE_COLOR,
-  fontSize: constants.FONT_SIZE,
-  rounded: true,
-  active: false,
-};
-
 const UserAvatar = ({
-  initialName,
-  userName,
-  src,
-  size,
-  backgroundColor,
-  loaderColor,
-  textColor,
-  fontSize,
-  rounded,
-  backgroundColors,
-  activeCircleColor,
-  active,
+  initialName = null,
+  userName = null,
+  src = null,
+  size = constants.SIZE,
+  backgroundColors = constants.BACKGROUND_COLORS,
+  loaderColor = constants.LOADER_COLOR,
+  textColor = constants.TEXT_COLOR,
+  activeCircleColor = constants.ACTIVE_CIRCLE_COLOR,
+  fontSize = constants.FONT_SIZE,
+  rounded = true,
+  active = false,
 }) => {
   const [imageLoading, onLoadImage] = useState(false);
   const userInitialName = initialName || getUserInitial({ userName });
@@ -119,5 +104,4 @@ const UserAvatar = ({
   );
 };
 UserAvatar.propTypes = propTypes;
-UserAvatar.defaultProps = defaultProps;
 export default UserAvatar;
