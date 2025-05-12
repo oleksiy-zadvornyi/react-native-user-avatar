@@ -28,6 +28,7 @@ const propTypes = {
 };
 
 const UserAvatar = ({
+  backgroundColor,
   initialName = null,
   userName = null,
   src = null,
